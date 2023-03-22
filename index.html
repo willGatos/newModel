@@ -480,7 +480,9 @@ function transformToAssocArray( prmstr ) {
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
         
-        tmparr[1] = tmparr[1].replace(/+/g, " ")
+        tmparr[1] =  tmparr[1].split('+').join(' ');
+        tmparr[1] =  tmparr[1].split('%C3%91').join('Ñ');
+
         console.log(tmparr)
         params[tmparr[0]] = tmparr[1];
     }
