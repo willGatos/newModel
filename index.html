@@ -21,7 +21,7 @@
                             </tbody></table>
                         </td>
                         <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8;" colspan="3"></td>
-                        <td style="font-size: 30px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8" colspan="14" align="center"><b id="HAWB2">HBL: 3250007119</b></td>
+                        <td style="font-size: 30px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8" colspan="14" align="center">HBL:<b id="HAWB2"> 3250007119</b></td>
                     </tr>
                     <tr>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent;  BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid;font-size: 13px" colspan="12">Shipper's Name and
@@ -119,9 +119,13 @@
                         </td>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: black; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid; font-size: 11px" colspan="2">Declare Value for
                             carriage
+                            <br/>
+                            <span class="valorDeclarado"></span>
                         </td>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: windowtext 1pt solid; font-size: 11px">Declare Value for
                             customs
+                            <br/>
+                            <span class="valorDeclarado"></span>
                         </td>
                     </tr>
                     <tr>
@@ -371,7 +375,7 @@
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: #d4d0c8; font-size: 12px" rowspan="2" colspan="5">&nbsp;
                         </td>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8; font-size: 12px"></td>
-                        <td style="font-size:20px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: #d4d0c8" rowspan="2" colspan="5">&nbsp;HBL:
+                        <td style="font-size:20px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: #d4d0c8" rowspan="2" colspan="5">HBL:
                         </td>
                         <td id="HAWB" style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8; font-size: 25px" rowspan="2" colspan="2">3250007119
                         </td>
@@ -517,7 +521,9 @@ function transformToAssocArray( prmstr ) {
         const valoresDeclarados = document.getElementsByClassName("valorDeclarado")
         valoresDeclarados[0].innerHTML = params.valorDeclarado
         valoresDeclarados[1].innerHTML = params.valorDeclarado
-        valoresDeclarados[2].innerHTML = params.valorDeclarado        
+        valoresDeclarados[2].innerHTML = params.valorDeclarado  
+        valoresDeclarados[3].innerHTML = params.valorDeclarado 
+        valoresDeclarados[4].innerHTML = params.valorDeclarado       
         var div = document.getElementById('HAWB').innerHTML = params.HBL;
         
         var div = document.getElementById('HAWB2').innerHTML = params.HBL;
