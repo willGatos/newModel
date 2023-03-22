@@ -479,14 +479,23 @@ function transformToAssocArray( prmstr ) {
     var prmarr = prmstr.split("&");
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
+        
+        tmparr[1] = tmparr[1].replace("+", " ")
+        console.log(tmparr)
         params[tmparr[0]] = tmparr[1];
     }
     return params;
 }
 
-var params = getSearchParameters();
+        var params = getSearchParameters();
         console.log(params)
-        
+
+        /* const value = params.keys(params).forEach(function(key, index) {
+            params[key] = params[key].replace();
+        }); */
+        /* 
+        console.log(value) */
+
         document.getElementById("tipoDeMercancia").innerHTML = params.tipoDeMercancia
         document.getElementById("peso").innerHTML = params.PesoUno
         document.getElementById("peso").innerHTML = params.PesoUno
