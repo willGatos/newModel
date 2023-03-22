@@ -501,8 +501,7 @@ function transformToAssocArray( prmstr ) {
         console.log(value) */
 
         document.getElementById("tipoDeMercancia").innerHTML = params.tipoDeMercancia
-        document.getElementById("peso").innerHTML = params.PesoUno
-        document.getElementById("peso").innerHTML = params.PesoUno
+        
         document.getElementById("pesoUno").innerHTML = params.PesoUno
         document.getElementById("pesoDos").innerHTML = params.PesoUno 
         document.getElementById("pesoTres").innerHTML = Math.round(params.PesoUno * 2.2 * 100) / 100
@@ -517,11 +516,12 @@ function transformToAssocArray( prmstr ) {
         document.getElementById("CI").innerHTML = params.cIdentidad
         
         const valoresDeclarados = document.getElementsByClassName("valorDeclarado")
-        valoresDeclarados[0].innerHTML = params.valorDeclarado
-        valoresDeclarados[1].innerHTML = params.valorDeclarado
-        valoresDeclarados[2].innerHTML = params.valorDeclarado  
-        valoresDeclarados[3].innerHTML = params.valorDeclarado 
-        valoresDeclarados[4].innerHTML = params.valorDeclarado       
+        console.log(valoresDeclarados)
+        valoresDeclarados[0].innerHTML = params.valorDeclarado;
+        valoresDeclarados[1].innerHTML = params.valorDeclarado;
+        valoresDeclarados[2].innerHTML = params.valorDeclarado; 
+        valoresDeclarados[3].innerHTML = params.valorDeclarado;
+        valoresDeclarados[4].innerHTML = params.valorDeclarado;      
         var div = document.getElementById('HAWB').innerHTML = params.HBL;
         
         var div = document.getElementById('HAWB2').innerHTML = params.HBL;
