@@ -72,7 +72,9 @@
                             Name and City<br style="mso-data-placement:same-cell;">
                             ESPIRAL SRL<br>
                             <br style="mso-data-placement:same-cell;">
+                            <p >
                             AV. Independencia No. 607, Sector Gazcue, Santo Domingo, República Dominicana
+                            </p>
                         </td>
                         <td valign="top" style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid;BORDER-BOTTOM: windowtext 1pt solid;  font-size: 12px" rowspan="3" colspan="10">Accounting
                             Information<br style="mso-data-placement:same-cell;">
@@ -86,9 +88,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent;  BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid;BORDER-BOTTOM: windowtext 1pt solid; font-size: 12px" colspan="18">Port of Departure
-                            Puerto Caucedo<br style="mso-data-placement:same-cell;">
-                            
+                        <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent;  BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid;BORDER-BOTTOM: windowtext 1pt solid; font-size: 12px" colspan="18">
+                            <p
+                            id="originStation"
+                            >Port of Departure</p>
+                            <p id="origin">Puerto Caucedo</p>
                         </td>
                     </tr>
                     <tr>
@@ -167,8 +171,9 @@
                         <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: windowtext 1pt solid; font-size: 12px"></td>
                     </tr>
                     <tr>
-                        <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid; font-size: 12px" colspan="11">Port of
-                            Destination
+                        <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid; font-size: 12px" colspan="11">
+                            <p id="destinationType">Port of
+                            Destination</p>
                         </td>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8; font-size: 12px">Flight / Date
                         </td>
@@ -185,7 +190,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="font-size:12px;BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: black 1pt solid" colspan="11">&nbsp;Puerto del Mariel<br><br>
+                        <td style="font-size:12px;BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: black 1pt solid" colspan="11">&nbsp;
+                            <p id="destination">Puerto del Mariel</p><br><br>
                         </td><td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: black; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: black 1pt solid; font-size: 12px" colspan="4">&nbsp;</td>
                         <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: black; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: black 1pt solid; font-size: 12px" colspan="3">&nbsp;</td>
                         <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: black; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid; font-size: 12px" colspan="6">XXX
@@ -506,6 +512,13 @@ function transformToAssocArray( prmstr ) {
 
         document.getElementById("tipoDeMercancia").innerHTML = params.tipoDeMercancia
         
+
+        if (params.docCategory == "AWL"){
+            document.getElementById("originStation").innerHTML = 'Airport of Departure'
+            document.getElementById("destinationType").innerHTML = 'Airport of Destination'
+            document.getElementById("destination").innerHTML = 'Aeropuerto Jose Marti,  Avenida Van Troy Y Final, Rancho Boyeros, Havana, Província De Ciudad De La Habana 11300.'
+            document.getElementById("origin").innerHTML = 'Aeropuerto Las Americas, Ruta 66 Salida Del Aeropuerto Las Americas, Santo Domingo 11336, República Dominicana.'
+        }
         document.getElementById("pesoUno").innerHTML = params.PesoUno
         document.getElementById("pesoDos").innerHTML = params.PesoUno 
         document.getElementById("pesoTres").innerHTML = Math.round(params.PesoUno * 2.2 * 100) / 100
