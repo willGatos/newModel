@@ -21,7 +21,9 @@
                             </tbody></table>
                         </td>
                         <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8;" colspan="3"></td>
-                        <td style="font-size: 30px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8" colspan="14" align="center">HBL:<b id="HAWB2"> 3250007119</b></td>
+                        <td style="font-size: 30px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8" colspan="14" align="center">
+                            <b id="docCategory">HBL</b>:
+                            <b id="HAWB2"> 3250007119</b></td>
                     </tr>
                     <tr>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: windowtext 1pt solid; BACKGROUND-COLOR: transparent;  BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid;font-size: 13px" colspan="12">Shipper's Name and
@@ -373,9 +375,11 @@
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: #d4d0c8; font-size: 12px" rowspan="2" colspan="5">&nbsp;
                         </td>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8; font-size: 12px"></td>
-                        <td style="font-size:20px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: #d4d0c8" rowspan="2" colspan="5">HBL:
+                        <td style="font-size:20px;BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: #d4d0c8" rowspan="2" colspan="5">
+                            <b id="docCategory2">HBL</b>:
                         </td>
-                        <td id="HAWB" style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8; font-size: 25px" rowspan="2" colspan="2">3250007119
+                        <td id="HAWB" style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: #d4d0c8; BORDER-RIGHT: #d4d0c8; font-size: 25px" rowspan="2" colspan="2">
+                            3250007119
                         </td>
                         <td style="BORDER-BOTTOM: #d4d0c8; BORDER-LEFT: #d4d0c8; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: black 1pt solid" rowspan="2" colspan="2">
                         </td>
@@ -521,7 +525,11 @@ function transformToAssocArray( prmstr ) {
         valoresDeclarados[1].innerHTML = params.valorDeclarado;
         valoresDeclarados[2].innerHTML = params.valorDeclarado; 
         valoresDeclarados[3].innerHTML = params.valorDeclarado;
-        valoresDeclarados[4].innerHTML = params.valorDeclarado;      
+        valoresDeclarados[4].innerHTML = params.valorDeclarado;
+        
+        document.getElementById("docCategory").innerHTML = params.docCategory;
+        document.getElementById("docCategory2").innerHTML = params.docCategory; 
+
         var div = document.getElementById('HAWB').innerHTML = params.HBL;
         
         var div = document.getElementById('HAWB2').innerHTML = params.HBL;
