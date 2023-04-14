@@ -481,37 +481,17 @@
             </tbody></table>
         </div>
     <script>
-        function getSearchParameters() {
-    var prmstr = window.location.search.substr(1);
-    return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-}
 
-function transformToAssocArray( prmstr ) {
-    var params = {};
-    var prmarr = prmstr.split("&");
-    for ( var i = 0; i < prmarr.length; i++) {
-        var tmparr = prmarr[i].split("=");
-        
-        tmparr[1] =  tmparr[1].split('+').join(' ');
-        tmparr[1] =  tmparr[1].split('%C3%91').join('Ñ');
+        function getParamsFromURL(){
+            const urlParams = new URLSearchParams(window.location.search);
+            const dataString = urlParams.get('data');
+            const dataObject = JSON.parse(dataString);
+            return(dataObject);
+        }
 
-        console.log(tmparr)
-        params[tmparr[0]] = tmparr[1];
-    }
-    return params;
-}
-
-        var params = getSearchParameters();
+        var params = getParamsFromURL();
         console.log(params)
-
-        /* const value = params.keys(params).forEach(function(key, index) {
-            params[key] = params[key].replace();
-        }); */
-        /* 
-        console.log(value) */
-
-        document.getElementById("tipoDeMercancia").innerHTML = params.tipoDeMercancia
-        
+        document.getElementById("tipoDeMercancia").innerHTML = params.merchandise.description
 
         if (params.docCategory == "AWL"){
             document.getElementById("originStation").innerHTML = 'Airport of Departure'
@@ -519,34 +499,33 @@ function transformToAssocArray( prmstr ) {
             document.getElementById("destination").innerHTML = 'Aeropuerto Jose Marti,  Avenida Van Troy Y Final, Rancho Boyeros, Havana, Província De Ciudad De La Habana 11300.'
             document.getElementById("origin").innerHTML = 'Aeropuerto Las Americas, Ruta 66 Salida Del Aeropuerto Las Americas, Santo Domingo 11336, República Dominicana.'
         }
-        document.getElementById("pesoUno").innerHTML = params.PesoUno
-        document.getElementById("pesoDos").innerHTML = params.PesoUno 
-        document.getElementById("pesoTres").innerHTML = Math.round(params.PesoUno * 2.2 * 100) / 100
-        document.getElementById("Consignatario").innerHTML = params.Consignatario
-        document.getElementById("DireccionDelCon").innerHTML = params.DireccionDelCon
-        document.getElementsByClassName("cant")[0].innerHTML = params.cant
-        document.getElementsByClassName("cant")[1].innerHTML = params.cant
-        document.getElementById("Direccion").innerHTML = params.Direccion
-        document.getElementById("Remitente").innerHTML = params.Remitente
-        document.getElementById("telefono").innerHTML = params.Telefono
-        document.getElementById("volume").innerHTML = params.Volumen
-        document.getElementById("CI").innerHTML = params.cIdentidad
+        document.getElementById("pesoUno").innerHTML = params.merchandise.weight
+        document.getElementById("pesoDos").innerHTML = params.merchandise.weight
+        document.getElementById("pesoTres").innerHTML = Math.round(params.merchandise.weight * 2.2 * 100) / 100
+        document.getElementById("Consignatario").innerHTML = `${params.receiver.name} ${params.receiver.surnames}`
+        document.getElementById("DireccionDelCon").innerHTML = params.receiver.address
+        document.getElementsByClassName("cant")[0].innerHTML = params.merchandise.packagesQuantity
+        document.getElementsByClassName("cant")[1].innerHTML = params.merchandise.packagesQuantity
+        document.getElementById("Direccion").innerHTML = params.sender.address
+        document.getElementById("Remitente").innerHTML = `${params.sender.name} ${params.sender.surnames}`
+        document.getElementById("telefono").innerHTML = params.sender.phone
+        document.getElementById("volume").innerHTML = params.merchandise.volume
+        document.getElementById("CI").innerHTML = params.receiver.CI
         
         const valoresDeclarados = document.getElementsByClassName("valorDeclarado")
         console.log(valoresDeclarados)
-        valoresDeclarados[0].innerHTML = params.valorDeclarado;
-        valoresDeclarados[1].innerHTML = params.valorDeclarado;
-        valoresDeclarados[2].innerHTML = params.valorDeclarado; 
-        valoresDeclarados[3].innerHTML = params.valorDeclarado;
-        valoresDeclarados[4].innerHTML = params.valorDeclarado;
+        valoresDeclarados[0].innerHTML = params.merchandise.value;
+        valoresDeclarados[1].innerHTML = params.merchandise.value;
+        valoresDeclarados[2].innerHTML = params.merchandise.value; 
+        valoresDeclarados[3].innerHTML = params.merchandise.value;
+        valoresDeclarados[4].innerHTML = params.merchandise.value;
         
         document.getElementById("docCategory").innerHTML = params.docCategory;
         document.getElementById("docCategory2").innerHTML = params.docCategory; 
 
-        var div = document.getElementById('HAWB').innerHTML = params.HBL;
-        
-        var div = document.getElementById('HAWB2').innerHTML = params.HBL;
-        
+        var div = document.getElementById('HAWB').innerHTML = params.HBLNumber;
+        var div = document.getElementById('HAWB2').innerHTML = params.HBLNumber;
+         
         
         </script>
 </html>
